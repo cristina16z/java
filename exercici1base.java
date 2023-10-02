@@ -62,7 +62,7 @@ public class exercici1base {
 
 
 
-    //Dado los días, pase a segundos, incluyendo el máximo de días [formato Long] 02/10/2023
+    //[formato Long 02/10/2023] Dado los días, pase a segundos, incluyendo el máximo de días 
         System.out.println("Quants dies?");    
         long dies = join.nextLong();
         dies = dies*24*3600;
@@ -70,12 +70,12 @@ public class exercici1base {
       
          System.out.println("Han passat " + dies + " segons");
 
-    //Para saber el número máximo de días que puede funcioanr nuestro programa [0]2/10/2023]
+    // [0]2/10/2023] Para saber el número máximo de días que puede funcioanr nuestro programa 
 
          System.out.println("El màxim nombre de dies " + Long.MAX_VALUE/86400 + " que el programa funciona correctament"); //máximo de días / los segundos que tiene 1 día 
 
 
-    //Dado los segundos se pase a días,horas,minutos y segundos [02/10/2023 parte 1]
+    //[02/10/2023 parte 1] Dado los segundos se pase a días,horas,minutos y segundos 
     
        System.out.println("Quants segons?");    
       long segons = join.nextLong();
@@ -94,7 +94,7 @@ public class exercici1base {
       System.out.println("Han passat " + dias + " dia " + hores + " horas " + minuts + " minutos " + segundos + " segons ");
 
 
-    //Que muestre el máximo número de segundos [02/10/2023 parte 2]
+    // [02/10/2023 parte 2] Que muestre el máximo número de segundos 
 
       long segons = Long.MAX_VALUE;
       
@@ -118,20 +118,7 @@ public class exercici1base {
     short 14 bits
     byte 8bits */
 
-    
-    //Dado el radio, dé el área y longitud de la circumferencia [02/10/2023]
 
-      System.out.println ("Quin és el radi?");
-      float radio = join.nextFloat();
-          
-      float circumferencia =  (float) (2.0 * 3.14 * radio);
-      float longitud = (float) (3.14 * Math.pow(radio, 2.0));
-    
-      System.out.println("L'àrea de la circumferència és de " + circumferencia + " i té una longitud de " + longitud);
-          
-           
-        }
-    }
 
 
 
