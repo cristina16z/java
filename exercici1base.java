@@ -118,7 +118,20 @@ public class exercici1base {
     short 14 bits
     byte 8bits */
 
+    
+    //Dado el radio, dé el área y longitud de la circumferencia [02/10/2023]
 
+      System.out.println ("Quin és el radi?");
+      float radio = join.nextFloat();
+          
+      float circumferencia =  (float) (2.0 * 3.14 * radio);
+      float longitud = (float) (3.14 * Math.pow(radio, 2.0));
+    
+      System.out.println("L'àrea de la circumferència és de " + circumferencia + " i té una longitud de " + longitud);
+          
+           
+        }
+    }
 
 
 
