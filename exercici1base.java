@@ -119,11 +119,6 @@ public class exercici1base {
     byte 8bits */
 
 
-
-
-
-
-
         }
 }
 
