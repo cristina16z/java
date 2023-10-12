@@ -6,7 +6,7 @@ public class teoria {
     public static void main(String args[]) {
      Scanner join = new Scanner(System.in); 
 
-     int edad = join.next.int();        //lee la entrada de un entero para que introduzcas el nº en la consola. activar botó interactive
+     int edad = join.nextInt();        //lee la entrada de un entero para que introduzcas el nº en la consola. activar botó interactive
      double pes = join.nextDouble();    // System.out.println ( “edat” + edad + “peso” + pes);
 
 
@@ -98,6 +98,50 @@ public class teoria {
         System.out.println("La posició on comença la subcadena b "+ "abcd".indexOf("b"));   /*la posición será 1, ya que es:
                                                                                                 a, b, c, d
                                                                                                 0, 1, 2, 3 */
+    /*Booleans
+     *  AND --> &&  A de complir les 2 condicions
+     *  OR --> ||   Com a mínim ha de complir 1 condició
+     *  NOT --> !
+     */
+        int enter = 145;
+        double real = 12.3;
+        boolean plou = false;
+         System.out.printf ("numero %d %f %b %c\n", enter, real, plou);  
 
+    /*  %d se asocia con 145 y %f=12.3  b=false, se asignan por orden los códigos de formato
+        %d enter
+        %f real (inclou float)
+        %b boolean 
+        %n o \n salt de línea  
+        %c caràcter     
+        %8.3f -->   el 8 la cantidad de espacios y 3 decimales
+        
+        Llei de de morgan
+        !(a&&b) <----> !a || !b     negar a y b = negar a o b
+        !(a||b) <----> !a && !b     negar a o b = negar a y b
+       
+       Recrear la tabla */ 
+        boolean plou = false;
+        boolean faSol = true;
+
+        System.out.printf ("%5s %5s %5s %5s \n", "plou", "faSol", "plou i fa sol", "plau o fa sol"); 
+        System.out.printf ("%5s %5s %13s %13s \n", "=====", "=====", "=============", "============="); 
+        System.out.printf ("%5b %5b %9b %13b \n", plou, !faSol, plou && !faSol, plou || !faSol); 
+        System.out.printf ("%5b %5b %9b %12b \n", plou, faSol, plou && faSol, plou || faSol); 
+        System.out.printf ("%5b %5b %9b %12b \n", !plou, !faSol, plou && !faSol, !plou || faSol); 
+        System.out.printf ("%5b %5b %9b %12b \n", !plou, faSol, !plou && faSol, !plou || faSol); 
+                            //cantidad de espacios
+/*EQUALS
+ *  comparando strings */
+    System.out.println("hola".equals("hola")); //true
+    System.out.println("hola".equals("Hola")); //false
+    System.out.println("hola".equalsIgnoreCase("Hola")); //true, hace que ignore la mayúsucla
+ 
+ //Con los strings: No es poden comparar amb operadors racionals, ja que són un tipus compost
+
+        
+   
+        
+     
     } 
 }

@@ -23,9 +23,9 @@ public class MyClass {
     
      System.out.println ("Quin és el radi?");
      float radio = join.nextFloat();
-      
-      float circumferencia =  (float) (2.0 * 3.14 * radio);
-      float longitud = (float) (3.14 * Math.pow(radio, 2.0));
+                                                                //también se podría declarar una constante con: Final double PI =3.14
+      float circumferencia =  (float) (2.0 * Math.PI * radio); //PI es una constant, si es mínusculas es una variable
+      float longitud = (float) (Math.PI * Math.pow(radio, 2.0));
 
       System.out.println("L'àrea de la circumferència és de " + circumferencia + " i té una longitud de " + longitud);
 
@@ -72,7 +72,7 @@ public class MyClass {
             preu2 = (float) (preu2*0.85);
             preu3 = (float) (preu3*0.5);
             
-            float totalPreus = (float) ((preu1 + preu2 + preu3)*1.22);
+            float totalPreus = (float) ((preu1 + preu2 + preu3)*1.22); //también se puede declarar una constante con: final double IVA=0.21
       
             System.out.println("El client haurà de pagar un import final de " + totalPreus + " euros amb IVA inclòs. ");
           
@@ -95,6 +95,6 @@ public class MyClass {
 
 
 
-                }
+                
          
 }
