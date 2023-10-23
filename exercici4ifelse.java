@@ -76,7 +76,6 @@ public class exercici4ifelse {
             System.out.println ("La botiga que surt més a compte és " + botiga1 + " amb un preu final de " + (float) compte1 );
             
         
-            
         } else if (compte2<= compte3 && compte2<=compte1){
             
             System.out.println ("La botiga que surt més a compte és " + botiga2 + " amb un preu final de " + (float) compte2 );
