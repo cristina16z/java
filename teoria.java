@@ -131,17 +131,35 @@ public class teoria {
         System.out.printf ("%5b %5b %9b %12b \n", !plou, !faSol, plou && !faSol, !plou || faSol); 
         System.out.printf ("%5b %5b %9b %12b \n", !plou, faSol, !plou && faSol, !plou || faSol); 
                             //cantidad de espacios
-/*EQUALS
- *  comparando strings */
-    System.out.println("hola".equals("hola")); //true
-    System.out.println("hola".equals("Hola")); //false
-    System.out.println("hola".equalsIgnoreCase("Hola")); //true, hace que ignore la mayúsucla
- 
- //Con los strings: No es poden comparar amb operadors racionals, ja que són un tipus compost
+    /*EQUALS
+    *  comparando strings */
+        System.out.println("hola".equals("hola")); //true
+        System.out.println("hola".equals("Hola")); //false
+        System.out.println("hola".equalsIgnoreCase("Hola")); //true, hace que ignore la mayúsucla
+    
+    //Con los strings: No es poden comparar amb operadors racionals, ja que són un tipus compost
 
+    /*WHILE (condició) / Do while es haz ésto, while si se cumple la condición, de nuevo el bucle
+     * Leer todos los precios de un producto y decir cuál es el mejor precio */
+        final double MARCA_FINAL = -1.0;
+        String producte = entrada.next();
+        double preu = entrada.nextDouble(); // demoment aquest és el millor preu
+        double millorPreu = preu;
+        
+        preu = entrada.nextDouble();        //llegim segon preu
+        while (preu != MARCA_FINAL) {
+            if  (preu < millorPreu){
+                millorPreu = preu;
+            }
+            preu = entrada.nextDouble();    //llegim tercer preu
+        }
+        
+        System.out.println("el millor preu és " + millorPreu);
+
+        /*Input ejemplo: ssd 50 25.8 90 72 88 -1.0  (el -1.0 para indiciar que ya no habrá más precios) */
+  
+
+}
+}
         
    
-        
-     
-    } 
-}
