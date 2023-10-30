@@ -139,24 +139,70 @@ public class teoria {
     
     //Con los strings: No es poden comparar amb operadors racionals, ja que són un tipus compost
 
-    /*WHILE (condició) / Do while es haz ésto, while si se cumple la condición, de nuevo el bucle
-     * Leer todos los precios de un producto y decir cuál es el mejor precio */
-        final double MARCA_FINAL = -1.0;
-        String producte = entrada.next();
-        double preu = entrada.nextDouble(); // demoment aquest és el millor preu
-        double millorPreu = preu;
-        
-        preu = entrada.nextDouble();        //llegim segon preu
-        while (preu != MARCA_FINAL) {
-            if  (preu < millorPreu){
-                millorPreu = preu;
-            }
-            preu = entrada.nextDouble();    //llegim tercer preu
-        }
-        
-        System.out.println("el millor preu és " + millorPreu);
 
-        /*Input ejemplo: ssd 50 25.8 90 72 88 -1.0  (el -1.0 para indiciar que ya no habrá más precios) */
+    /*WHILE (condició) / Do while es haz ésto, while si se cumple la condición, de nuevo el bucle.
+    While (condició) */
+
+
+    //SEGUIMENT de while dentro de otro while:
+        int i = 1;
+        int j = 0;
+        
+        while(i<10){
+            j=i;
+            while (j<10){
+                System.out.println(i+""+j);
+                j++;
+            }
+            i++;    /*las salidas serían: 1 1, 1 2, 1 3,..1 9
+                                         2 2, 2 3..29
+                                        3 3, 3 4 ..3 9   el programa acaba en 99*/
+   
+   
+    //[FOR] Con el for (inicialització; condició; increment)
+    
+      for(int i=1; i<10; i++){
+        System.out.println(i);
+        }
+    //[FOR] para escribir joan en vertical
+    String nom = "joan";
+    for(int i=0; i<nom.length(); i++){
+        System.out.println(nom.charAt(i)); }
+    }
+
+    //[FOR] abecedario a-z en vertical. a=97 i z=122
+    for(int i=97; i<123; i++){                     for(int i='a'; i<='z'; i++){    
+        System.out.println((char)i);                 System.out.printf("%c", i);    //printf si hay formato "%c" 
+    }
+
+    //[FOR] hacer un programa que diga 30 veces hola
+    for ( int i = 0; i<30 ;i++){
+        System.out.println("Hola");
+
+    /*[FOR] escriba la tabla del 7. Sortida 7 x 1 = 7, etc..  */ int nTaula = 7
+    for ( int i = 0; i<=10 ;i++){                               for(int i = 0; i<11; i++)
+        System.out.println("7 x " + i + " = " + i*7);           System.out.printf("%2d x %2d = %2d\n", nTaula, i, i*nTaula);
+    
+    //[WHILE] La tabla del 8
+    int i = 0;
+    while (i<=10){
+    System.out.println ("8 x " + i + " = " + i*8);
+    i++;
+    }
+    
+    //[FOR] Totes les taules
+
+    for(int nTaula = 0; nTaula<11; nTaula++){
+     
+        System.out.println("taula de " + nTaula);   //título: taula del ..
+        
+        for(int i = 0; i<11; i++){
+         
+         System.out.printf("%2d x %2d = %2d\n", nTaula, i, i*nTaula);
+         }
+         System.out.println();
+      }
+  }
   
 
 }
