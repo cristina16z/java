@@ -179,7 +179,7 @@ EXERCICI CLASE: Llegeixi un número i digui si es perfecte(la suma dels seus div
         }
         // <avançar_seqüencia>
             divisor++; 
-        }
+    }
         
         //<tractament_final>
         if (sumaDivisors == n){
@@ -227,7 +227,7 @@ EXERCICI CLASE: Llegeixi un número i digui si es perfecte(la suma dels seus div
                                                 
     // <avançar_seqüencia>
         num = num/10;                       //coges el 12 
-        }
+    }
         
     //<tractament_final>
         System.out.print(suma);
@@ -244,20 +244,20 @@ EXERCICI CLASE: Llegeixi un número i digui si es perfecte(la suma dels seus div
         
     //<iniciar_tractament>
     double millorPreu = Double.MAX_VALUE;
-        while (preu!=-1.0){
+    while (preu!=-1.0){
             
      //<tractar_element>
-            if (preu < millorPreu){
+        if (preu < millorPreu){
                 millorPreu = preu;
-            }
+        }
 
     //<avançar_seqüència>
         preu = entrada.nextDouble();
-        }
+    }
 
     //<tractament_final>
-        System.out.println(producte + " el seu millor preu és " + millorPreu);
-        }       
+    System.out.println(producte + " el seu millor preu és " + millorPreu);
+          
 
 
 /*EXERCICI 5.1:  Entrada: 1 UF3 10 9 6.5 4.3 4.5 -1       
@@ -360,15 +360,15 @@ EXERCICI CLASE: Llegeixi un número i digui si es perfecte(la suma dels seus div
 
 /*EXERCICI 5.5: Mostri el número en binari y compti quants digits té (en binari) */
 
-   //<preparar_sequencia>
-   int num = entrada.nextInt(); 
+    //<preparar_sequencia>
+    int num = entrada.nextInt(); 
         
-   //<iniciar_tractament>
-  String binario = Integer.toBinaryString(num);
+    //<iniciar_tractament>
+    String binario = Integer.toBinaryString(num);
 
-   //<tractament_final>
-  System.out.println(binario);
-  System.out.print("Té " + binario.length() + " digits en Binari");
+    //<tractament_final>
+    System.out.println(binario);
+    System.out.print("Té " + binario.length() + " digits en Binari");
 
 
 /*EXERCICI 5.6: Mostri les dues Notes més altes 
@@ -474,6 +474,7 @@ EXERCICI CLASE 06/11/2023:/*Donada una sequencia de notes enteres, acabades en -
          System.out.println("Enhorabona has superat el mòdul");
     } 
 
+
 /*EXERCICI 5.1: Donada una Seqüència de lletres amb un . final. Si S >=3 que digui que hi ha suspesos */
   
     String notes = entrada.next();
@@ -557,8 +558,212 @@ EXERCICI CLASE 06/11/2023:/*Donada una sequencia de notes enteres, acabades en -
     }
 
 
-  
+/*EXERCICI 5.3: Invertir un número exemple entrada: 1234        soritida: (1234,0)
+ *                                                                         (123,4)
+ *                                                                          (12,43)
+ *                                                                          (1,432)
+ *                                                                          (0,4321)         última línea */
+    //preparar tractament
+   int num = join.nextInt();
+   int numOriginal = num;
+   int numInvertit = 0;
+   
+    //Iniciar tractament  
+    while (num >0){
+     
+        System.out.println( "Seqüència (" + num + "," + numInvertit + ")"); 
+        
+        //tractar element
+        int num1 = num % 10; //primero cóge el último dígito que sería 4 (si introducimos 1234)
+        numInvertit = numInvertit*10 + num1; //reposiciona el último dígito al primero, 1r bucle: 0+4, 2nbucle: 40+3 (porque num1=123%10 =3 )
+                                            //3r bucle: 43*10 + 2 = 432 y 4to bucle: 432*10 + 1 = 4321
+
+        int unitats = (num % 10)*1000;      //transformación para coger las unidades y reposicionarlas
+        
+        int decenes = ((num % 100)/10) * 100;
+        
+        int centenes= ((num % 1000)/100)*10;
+        
+        int milers = num / 1000;
+        
+        //avançar seqüència
+        num = num/10;                       //se elimina el último dígito para la próxima iteración del bucle
+                                         //1r: 123 y se haría de nuevo el bucle con ése núm
+                                         //2n: 12     3r:1
+   }
+   
+    //tractament final   
+    System.out.println( "Seqüència (" + num + "," + numInvertit+ ")" ); //la última seqüència
+    System.out.println("Número original: " + numOriginal );
+    System.out.println( "El número invertit és: " + numInvertit);
+
+
+/*EXERCICI 5.4: FIBONACCI       0 1 1 2 3 5 8 13.. CERT = si algun dels 2000 primers termes acaba en 9
+ *                                                  FALS = en cas contrari                                  */
+    //preparar tractament
+    int fib0=0;
+    int fib1 = 1;
+    int comptador = 2;
     
+    //iniciar tractament
+    boolean trobat = false;
+    while( comptador<2000 && !trobat) {
+        
+        //tractar element
+        int total = fib1 + fib0; 
+        fib0 = fib1;
+        fib1 = total;
+        
+        if(total%10 == 9){
+            trobat = true;
+        }
+    }
+    //tractament final
+    if(trobat){
+    System.out.println("CERT");
+    }else{
+        System.out.println("FALS");
+    }
+
+
+/*EXERCICI 5.5: Comprovar si la seqüència està en ordre creixent 'S' yi sino, 'N' */
+   //preparar seqüència
+    int numero = entrada.nextInt();
+     
+    // iniciar seqüència
+    boolean ordenat = true;
+        while (numero != 0) {
+            //tractar element
+            int num2 = entrada.nextInt();
+
+            if (num2 != 0 && num2 < numero) {
+                ordenat = false;
+            }
+            
+            //avançar seqüència
+            numero = num2;
+        }
+
+    // tractament final
+    if (ordenat) {
+            System.out.println("S");
+        } else {
+            System.out.println("N");
+    }
+
+
+/*EXERCICI 5.6: Compta quantes 'a' hay */
+    //preparar tractament
+    String text = entrada.next();
+    int i = 0;                          //posició dels caràcters
+    int contador = 0;                   //comptar les lletres
+       
+    //Iniciar tractament  
+    while (i<text.length()){            //fa el bucle si la posició es menor a la longitud del text
+        char c = text.charAt(i);        //extreu un únic caràcter/lletra
+        
+        //tractar element
+       if (c =='a'){                    //si troba la A, aumenta-ho al comptador
+           contador++;
+          
+       }
+       //avançar seqüència
+    i++;                                //avança a la següent posició 0,1,2,3,..    
+    }    
+
+   //tractament final   
+    if(contador>0){
+        System.out.println("Hi ha " + contador + " vegades la lletra a" );
+    }else{
+        System.out.println( "No hi ha cap lletra A");
+    }
+
+
+/*EXERCICI 5.7: Comprovar si hi ha alguna 'a' */
+    //preparar tractament
+    String text = entrada.next();
+    int i = 0;                                     //posició dels caràcters
+    int contador = 0;                             //comptar les lletres
+    boolean trobat = false;
+    //Iniciar tractament  
+    while (i<text.length() && !trobat){           //fa el bucle si la posició es menor a la longitud del text
+        char c = text.charAt(i);                 //extreu un únic caràcter/lletra
+        
+        //tractar element
+       if (c =='a'){                             //si troba la A, aumenta-ho al comptador
+           contador++;
+           trobat = true;        
+       }
+       //avançar seqüència
+    i++;                                        //avança a la següent posició 0,1,2,3,..
+    }    
+        
+   //tractament final   
+    if(trobat){
+        System.out.println("Cert" );
+    }else{
+        System.out.println( "Fals");
+    }
+
+
+/*EXERCICI 5.8: Si hi ha alguna B després d'una A (a..b.) */
+
+    //preparar tractament
+    String text = entrada.next();
+    int i = 0;                       
+
+    //Iniciar tractament
+    boolean trobatAyB = false;
+    while (i<text.length() && !trobatAyB){          
+    char c = text.charAt(i);                //extrae de la posición i su caràcter    
+    
+    //tractar element
+    if (c == 'a'){                          //si el caràcter es 'a'
+        
+        while (i<text.length()){             //Inicia otro bucle para encontrar b
+                c = text.charAt(i);         //extrae de la posición i su caràcter    
+                
+                if(c == 'b'){              //Si encuentra B, trobatAyB pasa a ser true
+                trobatAyB = true;
+                }
+                i++;                       //en caso de que no lo encuentre, aumenta la posición i 
+        }                       //de nuevo bucle, para que vea el siguiente caràcter una posición aumentada
+        }
+    
+    i++;             //en caso de que no encuentre A, seguirá aumentando la posición para ver el siguiente caràcter                    
+
+    }       
+    //tractament final   
+    if( trobatAyB){
+    System.out.println("CERT: Entre la primera 'a' y el final de la cadena hi ha alguna 'b'" );
+    }else{
+    System.out.println( "FALS: No hi ha cap b després d'una 'a' (pot ser que no hi hagi cap 'a' en la cadena)");
+
+
+/*EXERCICI 5.9: Palíndrom (que es llegeixi igual tant del dret com del reves ex: reconocer) */
+
+    //preparar tractament
+    String text = entrada.next();
+    String original = text;
+    String invers = "";
+    int longitud = text.length();
+    int i = longitud -1; 
+    
+    //Iniciar tractament
+    while (i>=0){          
+        char c = text.charAt(i); 
+        invers = invers + c;        //tractar element
+        i--;                              
+    }    
+        
+    //tractament final   
+    if(original.equals(invers)){                                     
+        System.out.println("CERT: És un Palíndrom" );
+        }else{
+        System.out.println( "FALS: No és cap Palíndrom, ja que  " );
+        System.out.println( "L'original és: " + original );
+        System.out.println( "L'invers és: " + invers ); 
+    }
 
     }
 }
