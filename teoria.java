@@ -21,6 +21,9 @@ public class teoria {
     !=                      //Diferent
     %2==0				    //si es parell
 
+        ej modul: 10/3 = 3,33 en programación sería 3. Entonces 3*3 = 9 para llegar al 10 faltaria 1+ y ése es el módulo
+        ej2 modul: 15/6 = 2,5 en programación = 2, después 2*6= 12 y para llegar a 15, su módulo sería 3 (residu).
+
 
         Integers: size (lo que ocupa en bits), value(valor)
         int→ overflow: sumarle +1 al entero más grande, cómo resultado saldría en negativo (-)
@@ -196,7 +199,6 @@ public class teoria {
         System.out.println("taula de " + nTaula);   //título: taula del ..
         
         for(int i = 0; i<11; i++){
-         
          System.out.printf("%2d x %2d = %2d\n", nTaula, i, i*nTaula);
          }
          System.out.println();
