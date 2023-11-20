@@ -346,7 +346,7 @@ EXERCICI CLASE: Llegeixi un número i digui si es perfecte(la suma dels seus div
         nota = entrada.nextDouble();
     }
     //<tractament_final>
-     System.out.println("Les millors notes del M" + modul + " "+ uf + " són " + millorNota1 + " i " + millorNota2);
+    System.out.println("Les millors notes del M" + modul + " "+ uf + " són " + millorNota1 + " i " + millorNota2);
 
 
 /*EXERCICI 5.7: La nota Mitjana de cada UF (d'un llistat de diferents UF's )
@@ -493,7 +493,7 @@ EXERCICI CLASE 06/11/2023:/*Donada una sequencia de notes enteres, acabades en -
     double notafinal = suma / horesTotales; 
 
     if (trobat){
-    System.out.println("No acaba cicle, ja que té un 4 d’un mòdul." );
+        System.out.println("No acaba cicle, ja que té un 4 d’un mòdul." );
     }else{
         System.out.println("La nota final és " + notafinal );
     }
@@ -561,7 +561,7 @@ EXERCICI CLASE 06/11/2023:/*Donada una sequencia de notes enteres, acabades en -
     }
     //tractament final
     if(trobat){
-    System.out.println("CERT");
+        System.out.println("CERT");
     }else{
         System.out.println("FALS");
     }
@@ -673,9 +673,9 @@ EXERCICI CLASE 06/11/2023:/*Donada una sequencia de notes enteres, acabades en -
     }   
     //tractament final   
     if( trobatAyB){
-    System.out.println("CERT: Entre la primera 'a' y el final de la cadena hi ha alguna 'b'" );
+        System.out.println("CERT: Entre la primera 'a' y el final de la cadena hi ha alguna 'b'" );
     }else{
-    System.out.println( "FALS: No hi ha cap b després d'una 'a' (pot ser que no hi hagi cap 'a' en la cadena)");
+        System.out.println( "FALS: No hi ha cap b després d'una 'a' (pot ser que no hi hagi cap 'a' en la cadena)");
 
 
 /*EXERCICI 5.9: Palíndrom (que es llegeixi igual tant del dret com del reves ex: reconocer) */
@@ -702,6 +702,123 @@ EXERCICI CLASE 06/11/2023:/*Donada una sequencia de notes enteres, acabades en -
         System.out.println( "L'original és: " + original );
         System.out.println( "L'invers és: " + invers ); 
     }
+
+
+
+/*---------------------------------------------PROVA PRÀCTICA----------------------------------------------
+
+
+Cambiar a -> @     l -> 1      A -> 4       ex:bona sort amb l'examen --> BoN@SoRt @mb 1'ex4men               */
+
+//OPCIÓ 1 (mala):
+    String text = entrada.nextLine();
+    int i = 0;                                    
+    int contador = 0;                            
+ 
+    //Iniciar tractament  
+    while (i<text.length() ){          
+        char c = text.charAt(i);                
+        //tractar element
+        if (c =='a' ){                            
+            text = text.replace("a", "@");
+        }
+        
+        if (c =='l'){                            
+            text= text.replace("l", "1");
+        }
+       
+        if (c =='A'){                            
+            text = text.replace("A", "4");
+        }
+        //avançar seqüència
+        i++;                                   
+    }    
+    System.out.println(text); 
+
+
+//OPCIÓ 2:                                                          OPCIÓ 3
+    String contrasenya = entrada.nextLine();                        String contrasenya = entrada.nextLine();
+    int i = 0;                                                      int i = 0; 
+    String bessona = "";                                
+                                                                    String bessona = contrasenya.replace('a','@');
+        while(i<contrasenya.length()){                              bessona = bessona.replace('l','1');
+                                                                    bessona = bessona.replace('A','4');
+            char c = contrasenya.charAt(i); 
+                                                                    System.out.println(bessona);
+            if (c == 'l'){
+                c = '1';
+            }else if(c == 'a'){
+                c = '@';
+            }else if (c == 'A'){
+                c = '4';
+            }
+            
+            bessona = bessona +c;
+            i++;
+        }
+        
+    System.out.println(bessona);
+        
+
+/* Contar cuánta gente se ha matriculado                                                                         */
+    
+    String name = entrada.next();
+    final int MARCA_FINAL = 0;
+   
+    int contadorASIX = 0;
+    int contadorDAM = 0;
+    int contadorDAW = 0;
+  
+    while (!name.equalsIgnoreCase("final")){
+        
+        String cicle = entrada.next(); 
+        double matricula = entrada.nextDouble();
+    
+           if (cicle.equalsIgnoreCase("DAW1") && (matricula !=0)){
+               contadorDAW++;
+               
+           }
+           
+           if (cicle.equalsIgnoreCase("DAM1") && matricula !=0){
+               contadorDAM++;
+           }
+           
+           if (cicle.equalsIgnoreCase("ASIX1")  && matricula !=0){
+               contadorASIX++;
+           }
+
+        name = entrada.next();
+    }
+    
+      System.out.println("Daw " + contadorDAW + " Dam " + contadorDAM + " Asix " + contadorASIX );
+
+
+/*Que si hay más de 3 personas sin matricular, no iremos de excursión al Jump2Digital */
+    
+    String name = entrada.next();
+    int contador = 0;
+    boolean trobat = false;
+
+    while (!name.equalsIgnoreCase("final") && !trobat){
+        
+    String cicle = entrada.next(); 
+    double matricula = entrada.nextDouble();
+        
+        if (matricula == 0){
+            contador++;
+        }
+        if (contador >3){
+            trobat = true;
+        }
+
+        name = entrada.next();
+    }
+
+    if(trobat){
+        System.out.println("Es suspèn la sortida");
+        }else{
+            System.out.println("Anirem tots al jump2digital2");
+        }
 
     }
 }

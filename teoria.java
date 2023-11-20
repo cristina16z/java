@@ -191,19 +191,46 @@ public class teoria {
     System.out.println ("8 x " + i + " = " + i*8);
     i++;
     }
+
+    //[FOR] que sólo haga nx23 hasta nx25   input: [num][numInici][numFinal]    output: 7x23 = 161 hasta 7x25=175
+    int num= entrada.nextInt();
+    int inici = entrada.nextInt();
+    int ultim = entrada.nextInt();
+      
+       for(int i = inici; i<=ultim; i++){
+       System.out.printf("%2d x %2d = %2d\n", num, i, i*num);
+       }
+    
     
     //[FOR] Totes les taules
 
     for(int nTaula = 0; nTaula<11; nTaula++){
-     
-        System.out.println("taula de " + nTaula);   //título: taula del ..
+        System.out.println("taula de " + nTaula);                               //título: taula del ..
         
         for(int i = 0; i<11; i++){
          System.out.printf("%2d x %2d = %2d\n", nTaula, i, i*nTaula);
-         }
-         System.out.println();
-      }
-  }
+        }
+
+        System.out.println();
+    }
+    
+    //[FOR]Si sólo quiero las tablas del 7 al 10 y tenga núminicio y númfinal. Ejemplo input: [7][10][23][25]
+
+    int primeraTaula= entrada.nextInt();
+    int ultimaTaula = entrada.nextInt();
+    int iniciValor = entrada.nextInt();
+    int ultimValor = entrada.nextInt();
+
+    for(int num = primeraTaula; NUM<=ultimaTaula; num++){
+    System.out.println("Taula de " + num); 
+    
+        for(int valor = iniciValor; valor<=ultimValor; valor++){
+            System.out.printf("%2d x %2d = %3d\n", num, valor, num*valor);
+        }
+        
+        System.out.println();                                                   //para que haya un salto aparte
+    }
+
   
 
 }
