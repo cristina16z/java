@@ -820,5 +820,53 @@ Cambiar a -> @     l -> 1      A -> 4       ex:bona sort amb l'examen --> BoN@So
             System.out.println("Anirem tots al jump2digital2");
         }
 
+
+/*---------------------------------------------PROVA PRÀCTICA---------------------------------------------- */
+
+//Comptar Js
+
+    String text = entrada.nextLine();
+    int i = 0;
+    int contador = 0;
+
+    while(!text.equalsIgnoreCase("final")){
+        i = 0;
+        while (i<text.length()){
+            char c = text.charAt(i);
+            if (c == 'J'){
+                contador++;
+            }
+            i++;
+        }
+        text = entrada.nextLine();
+    }
+
+    if(contador>0) {
+        System.out.println("el nombre de Js és " + contador);
+    }else{
+        System.out.println("El nombre de Js és 0");
+    }
+
+
+//Lletres: un + dos fan 3!
+
+    Scanner entrada = new Scanner(System.in);
+    String text = entrada.nextLine();
+    String original = text;
+    int i = 0;
+    int a = 'a';
+    int z = 'z';
+
+    while (i < text.length()) {
+
+        char c = text.charAt(i);
+        
+        if ((int)text.charAt(i)>=a && (int)text.charAt(i)<=z) {
+            System.out.println("La posició " + i + original + " val" + c);
+        }
+            i++;
+    }
+
+
     }
 }
