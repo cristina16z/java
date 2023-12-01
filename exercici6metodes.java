@@ -84,6 +84,7 @@ public class Main {
             System.out.println(str + " " + "X");
         }
     }
+}
 
 /*[CodingBat2] Dado 2 cadenas que una reste a la otra, ejemplo: "hello there", "llo" --> "he there"
                                                                 "hello there", "e" --> "hllo thr"       */
@@ -180,8 +181,6 @@ public class AreaCercle {
         }
     }
 }
-
-
 
 
 
@@ -326,6 +325,64 @@ public class codingBat1 {
         testgHappy("yyygggxyy", true);
     }
 }
+                                                            //Formato Pere
+
+                                                            public class String3CodingBat {
+                                                            public static boolean gHappy(String str) {
+                                                                //mirem el primer //i=0
+                                                                //recorregut per les seqüencies que van del segon al penultim caràcter
+                                                                if (str.isEmpty()) return true; //cadena buida
+                                                                if (str.length()==1) return str.charAt(0)!='g'; //cadena 1 element
+                                                                if (str.charAt(0)=='g' && str.charAt(1)!='g') return false;
+
+
+                                                                int i=1;
+                                                                boolean trobat = false;
+                                                                int darrer = str.length() -1;
+                                                                while (i<darrer && !trobat) {
+                                                                    trobat = str.charAt(i) == 'g' &&
+                                                                            (str.charAt(i - 1) != 'g' && str.charAt(i + 1) != 'g');
+                                                                    i++;
+                                                                }
+                                                                //mirem l'ultim i= len -1
+                                                                if (str.charAt(darrer)=='g' && str.charAt(darrer - 1)!='g'){
+                                                                    trobat = true;
+                                                                }
+                                                                return !trobat;
+                                                            }
+
+                                                            public static void testGHappy(){
+                                                                boolean resultatEsperat;
+                                                                boolean resultat;
+                                                                String cadena;
+                                                                final String nomFuncio = "gHappy";
+                                                                String sortida;
+
+
+                                                                cadena = "xxggxx";
+                                                                resultatEsperat = true;
+                                                                resultat = gHappy("xxggxx");
+
+
+                                                                    //gHappy("xxggxx") → true   true   OK
+                                                                if (resultat==resultatEsperat){
+                                                                    sortida="OK";
+                                                                } else {
+                                                                    sortida = "X";
+                                                                }
+                                                                System.out.println(nomFuncio + "(\"" + cadena + "\")" + "--> " + resultatEsperat
+                                                                        + " " + resultat + " " + sortida);
+
+                                                                System.out.println(gHappy("xxgxx")); //false
+                                                                System.out.println(gHappy("xxggyygxx")); //false
+                                                                System.out.println(gHappy("x")); //true
+
+                                                            }
+
+                                                            public static void main(String[] args) {
+                                                                testGHappy();
+                                                            }
+                                                            }
 
 
 
@@ -416,8 +473,6 @@ public class codingBat3 {
 
 
 
-
-
 /*[Acepta el reto] Introduciendo X numero(indica cantidad de fechas)        2               Salida
                     Mirar si la fecha introducida es Navidad o no           13 2              NO
                                                                             25 12             SI            */
@@ -451,5 +506,6 @@ public class AceptaelretoEsnavidad {
             esNavidad(dia, mes);                    //hace que los valores introducidos pasen por el método
         }
     }
+}
 }
 
