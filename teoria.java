@@ -231,7 +231,97 @@ public class teoria {
         System.out.println();                                                   //para que haya un salto aparte
     }
 
-  
+
+
+//MÈTODES
+
+public static boolean aprovat (int nota){   
+         //   variable que quiero que me devuelva (variable que introduzco)
+
+
+
+
+//ARRAYS & VECTORS
+
+//IntroduccióAlsVectors
+
+public class IntroduccioAlsVectors {
+
+    public static void main(String[] args) {
+
+        System.out.println("STRING");
+        String bonDia = "Bon dia!";
+        System.out.println(bonDia.length()); //mirar la longitud
+        char c = bonDia.charAt(4);
+        for(int i= 0; i<bonDia.length();i++){
+            System.out.print(bonDia.charAt(i));
+        }
+        
+        System.out.println();
+        System.out.println();
+
+        //vector de caràcters
+        System.out.println("ARRAY");
+        char[] arrayChar;           //declaració
+        arrayChar = new char[8];     //reserva espai per a 8 caràcters //se podría directamente char[] arrayChar = new char[8];
+        arrayChar[0] = 'B';         //posició 0 de l'array
+        arrayChar [1] = 'o';
+        arrayChar [2] = 'n';
+        arrayChar [3] = ' ';
+        arrayChar [4] = 'd';
+        arrayChar [5] = 'i';
+        arrayChar [6] = 'a';
+        arrayChar [7] = '!';
+
+        System.out.println("La longitud del vector " + arrayChar.length);
+
+        for (int i = 0; i<arrayChar.length; i++){
+            System.out.print(arrayChar[i]);
+        }
+        System.out.println();                   //Sale Bon dia!
+        arrayChar[2] = 'M';                     //cambiamos la letra de la posición 2 ( n -> M)
+        System.out.println(arrayChar);          //escribe directamente Bon dia! o sustituido BoM dia!
+    }
+}
+
+
+//IntroduccióAlsVectors2
+
+public class IntroduccioAlsVectors2 {
+
+    public static void main(String[] args) {
+        int[] notes = new int[8];
+        double[] notesUf = new double[6];
+
+        for (int i = 0; i<notes.length;i++){
+            notes[i] = 10;                            //para que salga nota 10, 8 veces
+            System.out.println(notes[i]);
+        }
+
+        String[] cadena = new String[9];
+        System.out.println(cadena[0]);               //sortida: null     perque no hi ha cap cadena
+
+
+        //Forma alternativa d'inicialitzar un vector
+        double[] temperatura = {15, 15, 16, 19};
+        String[] diesSetmana = {"dilluns ", "divendres"};
+
+        for (int i = 0; i< diesSetmana.length; i++){
+            System.out.print(diesSetmana[i]);           //sortida: dilluns, divendres
+        }
+        System.out.println();
+    }
+
+
+    //mètode que rep com a paràmetre un vector
+    public static void mostraTemperatures(double[] temperatura){
+
+        for (int i = 0; i<temperatura.length; i++)
+            System.out.println(temperatura[i]);
+    }
+    //mètode que retorni un vector:
+    //public static int[] joinArrays(int[] array1, int[] array2){
+
 
 }
 }
