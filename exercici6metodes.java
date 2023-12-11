@@ -1,5 +1,6 @@
 public class exercici6metodes {
 //a la hora de crear la clase TieneQueSerEnMayúsculas
+//a la hora de crear métodos, la primera siempre en minúscula
 //void significa que NO va a retornar nada
 //[CodingBat1]Contar si las palabras acaban en Z o Y 
 
