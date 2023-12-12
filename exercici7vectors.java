@@ -1,5 +1,6 @@
 public class exercici7vectors {
 
+    //Donat un vector amb les notes finals retorni la notaMitjana
     public static double notaMitjana(double[] nota) {
     
         double suma = 0;
@@ -12,6 +13,7 @@ public class exercici7vectors {
     }
     
 
+    //Donat un vector de notes retorni la nota més alta.
     public static double notaGran(double[] nota) {
     
         double millorNota = nota[0];                //declaramos millorNota cómo la primera Nota que introducimos
@@ -24,6 +26,7 @@ public class exercici7vectors {
     }
     
 
+    //Donat un vector de notes retorni cert si hi ha algun suspens, fals si no n’hi ha cap.
     public static boolean suspes(double[] nota) {
     
         boolean trobat = false;
@@ -35,6 +38,12 @@ public class exercici7vectors {
         return trobat;
     }
     
+
+    /*donat dos vectors d’enters, retorni un vector amb la combinació dels dos (joinArrays).
+        1-Arguments dos vectors v1, v2
+        2-cal crear un nou vector, v3 amb espai igual a la suma dels dos (v3.length = v1.length + v2.length)
+        3-copiar els valors de v1 a v3
+        4- copiar els valors de v2 a les posicions corresponents de v3                                                        */
 
     public static int[] combinacion(int[] array1, int[] array2) {
     
@@ -51,7 +60,13 @@ public class exercici7vectors {
         return array;
     }
     
-
+    
+    /*Donat un vector d’enters amb les notes, determini el percentatge d’alumnes que ha tret cada nota.
+        Fer servir un vector de comptadors 
+        A la posició 0 comptarem el nombre de zeros que han sorti
+        A la posició 1 comptarem el nombre de 1s que han sorti  
+        Exemple, si el vector té les notes 10 9 9 8 5 6 5 9 10 4 3 8 3 4 3 5                            */
+    
     public static float[] percentatge(int[] notas) {
     
         int contadorAlumnes = notas.length;
@@ -65,7 +80,7 @@ public class exercici7vectors {
                                                     //notas[3] = 8 entonces frecuencias[8] es 1
         for (int nota = 0; nota <= 10; nota++) {
             float percentatge = frecuencias[nota] / (float) contadorAlumnes * 100;
-            percentatges[nota] = percentatge; //calcular el % en base a cada nota repetida sobre el total de alumnos
+            percentatges[nota] = percentatge;       //calcular el % en base a cada nota repetida sobre el total de alumnos
         }
     
         return percentatges;
@@ -226,4 +241,92 @@ public class CodingBat2 {
     }
 }
 
+
+
+/* ---------------------------------------------------------CodingBat3------------------------------------------------------------------------- */
+
+
+
+
+import java.util.Arrays;
+
+public class CodingBat3 {
+
+    /*Dado una array exterior y otra interior.
+    Comprovar si todos los números de la array interior estan en la array exterior
+                exterior{1, 2, 4, 6}        interior {2, 3, 4}          false  (porque no está el 3)        
+                exterior{1, 2, 4, 4, 6}        interior {2,4}           true                            */
+    public static boolean linearIn(int[] outer, int[] inner) {
+
+        int contador = 0;
+
+        for (int i = 0; i<inner.length;i++){
+            boolean t2 = false;                                  
+
+            for (int j = 0; j<outer.length && !t2;j++){
+
+                if (inner[i] == outer[j]){
+                    contador++;
+                    t2 = true;                            //para que no cuente de nuevo un número que ya hemos contado por ej 4
+                }                                         //al declararlo true, pasa al siguiente núm interior y lo busca en el exterior
+            }
+        }
+        return inner.length == contador;
+    }
+
+
+    /*Dado una array que se cambie de orden los números de forma que después de un3 haya un 4
+    * se pueden mover todos los números excepto el 3                                                    */
+    public static int[] fix34(int[] nums) {
+
+        int j = 1;
+        for (int i = 0; i < nums.length - 1; i++) {
+
+            if (nums[i] == 3 && nums[i + 1] != 4) {             //un 3 seguido de un núm diferente a 4
+
+                for (; nums[j] != 4; j++) ;
+                nums[j] = nums[i + 1];
+                nums[i + 1] = 4;
+
+            }
+        }
+
+        return nums;
+    }
+
+
+    /*Dado n>=0, cree una longitud de matriz n*n con el siguiente patrón,
+    para n=3: {0, 0, 1, 0, 2, 1, 3, 2, 1} (espacios agregados para mostrar el 3 grupos).
+                [g1]    [g2]         [g3]                                                                */
+    public static int[] squareUp(int n) {
+
+        int[] espacio = new int[n*n];
+        int p;
+
+        for (int i = 1; i<=n; i++){
+
+            p = n * i - 1;
+            for(int j = 1; j <= i; j++, p--)
+                espacio[p] = j;
+        }
+        return espacio;
+    }
+
+
+
+    public static void main(String[] args) {
+
+        System.out.println("First CodingBat: Outer and inner");
+        System.out.println(linearIn(new int[]{1, 2, 4, 6}, new int[]{2, 3, 4}));
+
+        System.out.println("Second CodingBat: fix34");
+        int[] result = fix34(new int[]{1, 3, 1, 4, 4, 3, 1});
+        System.out.println(Arrays.toString(result));
+
+        System.out.println("Third CodingBat: SquareUp");
+        int[] result3 = squareUp(3);
+        System.out.println(Arrays.toString(result3));
+    }
+
+}
 
