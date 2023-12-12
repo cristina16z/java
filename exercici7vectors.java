@@ -85,8 +85,20 @@ public class exercici7vectors {
     
         return percentatges;
     }
-    
-
+                                                        //Otra forma de Hacerlo (buena)
+                                                        public static float[] percentatge(int[] notas) {
+                                                        
+                                                            float[] percentatges = new float[11];       
+                                                        
+                                                            for (int i = 0; i < notas.length; i++) {    
+                                                                percentatges[notas[i]]++;               
+                                                            }                                          
+                                                                                                    
+                                                            for (int nota = 0; nota <11; nota++) {
+                                                                percentatges[nota]= percentatges[nota] / notas.length * 100;
+                                                            }
+                                                            return percentatges;
+                                                        }
     
     public static void main(String[] args) {
           
