@@ -69,21 +69,21 @@ public class exercici7vectors {
     
     public static float[] percentatge(int[] notas) {
     
-        int contadorAlumnes = notas.length;
-        float[] percentatges = new float[11];       //del 0 al 10, son 11 espacios
-        int[] frecuencias = new int[11];
-    
-        for (int i = 0; i < notas.length; i++) {    //contar las veces que se repite una nota
-            frecuencias[notas[i]]++;                //notas[0] = 10 entonces frecuencias[|0] es 1
-        }                                           //notas[|] = 9 entonces frecuencias[9] es 1
-                                                    //notas[2] = 9 entonces frecuencias[9] es 2
-                                                    //notas[3] = 8 entonces frecuencias[8] es 1
-        for (int nota = 0; nota <= 10; nota++) {
-            float percentatge = frecuencias[nota] / (float) contadorAlumnes * 100;
-            percentatges[nota] = percentatge;       //calcular el % en base a cada nota repetida sobre el total de alumnos
-        }
-    
-        return percentatges;
+            //int contadorAlumnes = notas.length;
+            float[] percentatges = new float[11];       //del 0 al 10, son 11 espacios
+            //int[] frecuencias = new int[11];
+
+            for (int i = 0; i < notas.length; i++) {    //contar las veces que se repite una nota
+                percentatges[notas[i]]++;                //notas[0] = 10 entonces frecuencias[|0] es 1
+            }                                           //notas[|] = 9 entonces frecuencias[9] es 1
+                                                        //notas[2] = 9 entonces frecuencias[9] es 2
+                                                        //notas[3] = 8 entonces frecuencias[8] es 1
+            for (int nota = 0; nota <11; nota++) {
+                percentatges[nota]= percentatges[nota] / notas.length * 100;
+                //= percentatge; //calcular el % en base a cada nota repetida sobre el total de alumnos
+            }
+
+            return percentatges;
     }
                                                         //Otra forma de Hacerlo (buena)
                                                         public static float[] percentatge(int[] notas) {
