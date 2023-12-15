@@ -85,7 +85,7 @@ public class exercici7vectors {
 
             return percentatges;
     }
-                                                        //Otra forma de Hacerlo (buena)
+                                                        //Otra forma de hacerlo (buena) Profe 2
                                                         public static float[] percentatge(int[] notas) {
                                                         
                                                             float[] percentatges = new float[11];       
@@ -99,7 +99,28 @@ public class exercici7vectors {
                                                             }
                                                             return percentatges;
                                                         }
-    
+
+
+                                                        //Formato Pere
+                                                        public static void percentatge2(int[] notas) {
+
+                                                            float[] percentatges = new float[11];
+                                                            for (int i = 0; i < notas.length; i++) {
+                                                                percentatges[notas[i]]++;
+                                                            }
+                                                
+                                                            //mostrem el percentatges
+                                                            for(int i = percentatges.length-1; i>=0; i--){
+                                                                System.out.printf("%2d ==> %.2f\n", i, 100.0 * percentatges[i] / notas.length);
+                                                            }
+                                                            System.out.println();
+                                                        }
+
+                                                        public static void main(String[] args) {
+                                                            percentatge2(new int[]{10, 9, 9, 8, 5, 6, 5, 9, 10, 4, 3, 8, 3, 4, 3, 5});
+                                                        }
+
+                                                        
     public static void main(String[] args) {
           
     System.out.println("1r Mètode: Nota Mitjana");
