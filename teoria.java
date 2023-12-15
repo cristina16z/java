@@ -8,7 +8,7 @@ public class teoria {
 
      int edad = join.nextInt();        //lee la entrada de un entero para que introduzcas el nº en la consola. activar botó interactive
      double pes = join.nextDouble();    // System.out.println ( “edat” + edad + “peso” + pes);
-
+    }
 
  
 /* DATOS
@@ -68,7 +68,7 @@ public class teoria {
 
 
 
-    Strings
+    /*-------------------------------------------------------STRINGS---------------------------------------------------*/ 
 
         /*
         Cadenes de caràcters String (tipus compost)
@@ -101,7 +101,11 @@ public class teoria {
         System.out.println("La posició on comença la subcadena b "+ "abcd".indexOf("b"));   /*la posición será 1, ya que es:
                                                                                                 a, b, c, d
                                                                                                 0, 1, 2, 3 */
-/*Booleans
+
+
+/*--------------------------------------------------------BOOLEANS---------------------------------------------------*/    
+
+
     *  AND --> &&  A de complir les 2 condicions
     *  OR --> ||   Com a mínim ha de complir 1 condició
     *  NOT --> !    */
@@ -142,6 +146,11 @@ public class teoria {
     //Con los strings: No es poden comparar amb operadors racionals, ja que són un tipus compost
 
 
+
+/*--------------------------------------------------------BUCLES WHILE & FOR---------------------------------------------------*/    
+
+
+
 /*WHILE (condició) / Do while es haz ésto, while si se cumple la condición, de nuevo el bucle.
     While (condició) */
 
@@ -180,6 +189,7 @@ public class teoria {
     //[FOR] hacer un programa que diga 30 veces hola
     for ( int i = 0; i<30 ;i++){
         System.out.println("Hola");
+    }
 
     /*[FOR] escriba la tabla del 7. Sortida 7 x 1 = 7, etc..  */ int nTaula = 7
     for ( int i = 0; i<=10 ;i++){                               for(int i = 0; i<11; i++)
@@ -241,7 +251,7 @@ public static boolean aprovat (int nota){
 
 
 
-//ARRAYS & VECTORS
+/*--------------------------------------------------------------ARRAYS & VECTORS---------------------------------------------------*/
 
 //IntroduccióAlsVectors
 
@@ -322,8 +332,8 @@ public class IntroduccioAlsVectors2 {
     //mètode que retorni un vector:
     //public static int[] joinArrays(int[] array1, int[] array2){
 
+    }
+}}
 
-}
-}
         
    
