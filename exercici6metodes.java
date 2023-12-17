@@ -57,7 +57,7 @@ public class AreaCercle {
             System.out.println("ERROR");
         }
     }
-}
+}}
 
 
 
@@ -138,17 +138,17 @@ public class Main {
         int countYZ = 0;
         int len = str.length();
 
-        for(int i=0; i<len -1; i++){
-            char carSeguent = str.charAt(i+1);
-
-            if (!Character.isLetter(carSeguent)){
-                char car = str.charAt(i);
+        for(int i=0; i<len -1; i++){                                                  // fez day
+            char carSeguent = str.charAt(i+1);                                       //el bucle es para cuando hay mínimo 2 palabras
+                                                                                    //y mirar si la primera palabra acaba en Z o Y
+            if (!Character.isLetter(carSeguent)){                                   //diciendo que si la siguiente letra (de dónde estás) no es un caracter
+                char car = str.charAt(i);                                           //mira ésa actual letra (última de la palabra) si es Z o Y
                 if (car =='Y' || car=='y' || car=='z' || car== 'Z'){
                     countYZ++;
                 }
             }
         }
-        //si ultima lletra és y o z?
+                                                                                    //Mirar si la última letra de la String es Z o Y
         char car = str.charAt(len - 1);
         if (car =='Y' || car=='y' || car=='z' || car== 'Z'){
             countYZ++;
@@ -288,8 +288,8 @@ public static void main(String[] args) {
                                                                     for (int i = 0; i<str.length() && trobat; i++){
                                                                         char c = str.charAt(i);
 
-                                                                        if ( c == 'g'){
-                                                                            if ((i>0 && str.charAt (i-1) == 'g') || (i<str.length() -1) && str.charAt(i+1) == 'g'){
+                                                                        if ( c == 'g'){   //       prinicpio     ||  final. Si está en la penúltima posición  && última posición = g
+                                                                            if ((i>0 && str.charAt (i-1) == 'g') || (i<str.length() -1) && str.charAt(i+1) == 'g'){ 
 
                                                                                 trobat = true;
                                                                             }else{
@@ -299,7 +299,7 @@ public static void main(String[] args) {
                                                                     }
                                                                     return trobat;
                                                                 }
-
+//éste bucle no funciona para casos cómo asdgxggfs ya que sólo comprovará la primera g, y si ésta no tiene otra g ya dirá que false. No comprovará el restante de la cadena
                                                                 public static void main(String[] args) {
                                                                     Scanner entrada = new Scanner(System.in);
                                                                     System.out.println(gHappy(entrada.nextLine()));

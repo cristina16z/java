@@ -30,7 +30,7 @@ public class exercici7vectors {
     public static boolean suspes(double[] nota) {
     
         boolean trobat = false;
-        for (int i = 0; i < nota.length; i++) {
+        for (int i = 0; i < nota.length; i++) {                 //se podría poner && !trobat
             if (nota[i] < 5) {
                 trobat = true;
             }
@@ -47,7 +47,7 @@ public class exercici7vectors {
 
     public static int[] combinacion(int[] array1, int[] array2) {
     
-        int[] array = new int[array1.length + array2.length];
+        int[] array = new int[array1.length + array2.length];       //asignamos el espacio equivalente al espacio de array1+array2
     
         for (int i = 0; i < array1.length; i++) {
             array[i] = array1[i];
@@ -69,9 +69,8 @@ public class exercici7vectors {
     
     public static float[] percentatge(int[] notas) {
     
-            //int contadorAlumnes = notas.length;
             float[] percentatges = new float[11];       //del 0 al 10, son 11 espacios
-            //int[] frecuencias = new int[11];
+        
 
             for (int i = 0; i < notas.length; i++) {    //contar las veces que se repite una nota
                 percentatges[notas[i]]++;                //notas[0] = 10 entonces frecuencias[|0] es 1
@@ -80,26 +79,10 @@ public class exercici7vectors {
                                                         //notas[3] = 8 entonces frecuencias[8] es 1
             for (int nota = 0; nota <11; nota++) {
                 percentatges[nota]= percentatges[nota] / notas.length * 100;
-                //= percentatge; //calcular el % en base a cada nota repetida sobre el total de alumnos
+                //calcular el % en base a cada nota repetida sobre el total de alumnos
             }
-
             return percentatges;
     }
-                                                        //Otra forma de hacerlo (buena) Profe 2
-                                                        public static float[] percentatge(int[] notas) {
-                                                        
-                                                            float[] percentatges = new float[11];       
-                                                        
-                                                            for (int i = 0; i < notas.length; i++) {    
-                                                                percentatges[notas[i]]++;               
-                                                            }                                          
-                                                                                                    
-                                                            for (int nota = 0; nota <11; nota++) {
-                                                                percentatges[nota]= percentatges[nota] / notas.length * 100;
-                                                            }
-                                                            return percentatges;
-                                                        }
-
 
                                                         //Formato Pere
                                                         public static void percentatge2(int[] notas) {
@@ -110,12 +93,11 @@ public class exercici7vectors {
                                                             }
                                                 
                                                             //mostrem el percentatges
-                                                            for(int i = percentatges.length-1; i>=0; i--){
-                                                                System.out.printf("%2d ==> %.2f\n", i, 100.0 * percentatges[i] / notas.length);
+                                                            for(int j = percentatges.length-1; j>=0; j--){
+                                                                System.out.printf("%2d ==> %.2f\n", j, 100.0 * percentatges[j] / notas.length);
                                                             }
                                                             System.out.println();
                                                         }
-
                                                         public static void main(String[] args) {
                                                             percentatge2(new int[]{10, 9, 9, 8, 5, 6, 5, 9, 10, 4, 3, 8, 3, 4, 3, 5});
                                                         }
@@ -209,6 +191,7 @@ public class codingBat {
 
 public class CodingBat2 {
 
+    //cuente cuántos números son pares
     public static int countEvens(int[] nums) {
 
         int contador = 0;
@@ -220,6 +203,7 @@ public class CodingBat2 {
         return contador;
     }
 
+    //de una serie de números, coja el más grande - el más pequeño
     public static int bigDiff(int[] nums) {
 
         int max = 0;
@@ -238,6 +222,7 @@ public class CodingBat2 {
         return resultat;
     }
 
+    //Devuelva la suma de los numeros en la array excepto si hay un 13 que no lo cuente 
     public static int sum13(int[] nums) {
 
         int contador = 0;
